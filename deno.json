@@ -1,6 +1,19 @@
 {
-  "tasks": {
-    "dev": "deno run -A --node-modules-dir npm:vite"
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "dom.asynciterable", "deno.ns"],
+    "strict": true,
+    "types": ["./src/vite-env.d.ts", "npm:@types/chrome"],
+    "noUncheckedIndexedAccess": true,
+  },
+  "fmt": {
+    "useTabs": false,
+    "lineWidth": 80,
+    "indentWidth": 2,
+    "semiColons": false,
+    "singleQuote": false,
+    "proseWrap": "preserve",
+    "include": ["src/"],
+    "exclude": []
   },
   "imports": {
     "vite": "npm:vite@^5.0.10",
@@ -8,6 +21,27 @@
     "tailwindcss": "npm:tailwindcss@^3.3.6",
     "autoprefixer": "npm:autoprefixer@^10.4.16",
     "postcss": "npm:postcss@^8.4.32",
-    "postcss-load-config": "npm:postcss-load-config@^5.0.2"
+    "postcss-load-config": "npm:postcss-load-config@^5.0.2",
+
+    "flowbite": "npm:flowbite@^2.3.0",
+    "flowbite/": "npm:flowbite@^2.3.0/",
+    "flowbite-svelte": "npm:flowbite-svelte@^0.44.24",
+    "tailwind-merge": "npm:tailwind-merge@^2.2.1",
+    "@popperjs/core": "npm:@popperjs/core@^2.11.8",
+  },
+  "lint": {
+    "include": ["src/"],
+    "exclude": [],
+    "rules": {
+      "tags": ["recommended"],
+      "include": ["ban-untagged-todo", "no-eval"],
+      "exclude": ["ban-types", "no-explicit-any"]
+    }
+  },
+  "tasks": {
+    "dev": "deno run -A --node-modules-dir npm:vite",
+    "build": "deno run -A --node-modules-dir npm:vite build",
+    "preview": "deno run -A --node-modules-dir npm:vite preview",
+    "serve": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts dist/"
   }
 }

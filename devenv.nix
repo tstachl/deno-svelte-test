@@ -1,0 +1,3 @@
+{
+  languages.deno.enable = true;
+}

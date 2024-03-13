@@ -1,0 +1,8 @@
+{
+  "tasks": {
+    "dev": "deno run -A --node-modules-dir npm:vite"
+  },
+  "imports": {
+    "vite": "npm:vite@^5.0.10",
+  }
+}

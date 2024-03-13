@@ -4,5 +4,10 @@
   },
   "imports": {
     "vite": "npm:vite@^5.0.10",
+
+    "tailwindcss": "npm:tailwindcss@^3.3.6",
+    "autoprefixer": "npm:autoprefixer@^10.4.16",
+    "postcss": "npm:postcss@^8.4.32",
+    "postcss-load-config": "npm:postcss-load-config@^5.0.2"
   }
 }
